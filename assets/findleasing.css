@@ -1,0 +1,265 @@
+.fl-detail-page {
+    max-width: 100%;
+    width: 100%;
+}
+
+.fl-bs .slick-image-slider-image {
+    width: 100%;
+    max-height: 90vh;
+    object-fit: cover;
+}
+
+#fl-image-slider {
+    display: none;
+    margin-left: 0;
+    background-color: black;
+}
+
+.fl-sub-title {
+    display: inline-block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 100%;
+    height: 28px;
+}
+
+.fl-title {
+    font-weight: bold !important;
+    margin-bottom: 0;
+}
+
+.fl-img-responsive {
+    max-width: 100%;
+    min-height: 200px;
+    object-fit: cover;
+}
+
+.fl-stat-value {
+    font-weight: bold;
+}
+
+.fl-price-monthly {
+    padding-top: 6px;
+    padding-bottom: 6px;
+    font-size: 120%;
+    background-color: #eaeaea;
+    color: #333;
+}
+
+.fl-price-monthly-value {
+    font-weight: bold;
+}
+
+.fl-offset-5 {
+    margin-top: 5px;
+}
+
+.fl-offset-7 {
+    margin-top: 7px;
+}
+
+.fl-offset-15 {
+    margin-top: 15px;
+}
+
+.fl-offset-20 {
+    margin-top: 20px;
+}
+
+.fl-offset-30 {
+    margin-top: 30px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.fl-sorting-container {
+    margin: 0;
+    padding-left: 15px;
+    line-height: 30px;
+    list-style-type: none;
+}
+
+.fl-sorting-container li {
+    display: inline;
+    padding: 6px;
+}
+
+.fl-sorting-container li:first-child {
+    padding-left: 0;
+}
+
+.fl-pagination {
+    margin: 16px auto;
+    list-style: inside;
+    padding: 0;
+}
+
+.fl-pagination li {
+    display: inline-block;
+}
+
+.fl-pagination li a {
+    display: block;
+    background-color: #eaeaea;
+    padding: 8px 14px;
+    color: #333;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.fl-pagination li a:hover,
+.fl-pagination li a.active {
+    color: black;
+    font-weight: bold;
+    background-color: #efefef;
+}
+
+.fl-bs {
+    margin-top: 24px;
+}
+
+.fl-bs .slick-prev,
+.fl-bs .slick-next {
+    z-index: 100;
+}
+
+.fl-bs .slick-prev {
+    left: 10px;
+}
+
+.fl-bs .slick-next {
+    right: 10px;
+}
+
+.fl-bs .fl-equipments {
+    column-count: 2;
+    list-style: none;
+    margin: 0;
+    width: 100%;
+}
+
+.fl-bs .ownership-buttons .ownership-button.active {
+    color: #ffffff;
+    background-color: #3a3a3a;
+    border-color: #3a3a3a;
+}
+
+.fl-bs .leasing-tab.hidden {
+    display: none;
+}
+
+.text-right {
+    text-align: right;
+}
+
+a .leasing-info {
+    color: #222;
+}
+
+.fl-border-bottom {
+    border-top: 0;
+    border-bottom: 1px solid #ccc;
+}
+
+@media only screen and (min-width: 401px) and (max-width: 960px) {
+    #slick-image-slider .slick-image-sæider-image {
+        height: 600px;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .fl-img-responsive {
+        height: 225px;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .fl-img-responsive {
+        height: auto;
+    }
+}
+
+.fl-bs .fl-detail-price {
+    display: block;
+    width: 100%;
+    background-color: black;
+    color: white;
+    font-size: 18px;
+    text-align: center;
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+
+.fl-bs .fl-detail-price > div {
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+
+.fl-bs .fl-detail-price .fl-price {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.fl-bs .monthly-pay-wrapper {
+    background-color: #333;
+    color: white;
+}
+
+.fl-bs .monthly-pay-container {
+    width: 100%;
+    padding: 8px;
+    text-align: center;
+}
+
+.fl-bs .monthly-pay-container .price-monthly-header {
+    color: white;
+}
+
+.fl-bs .slider-label, .fl-bs .slider-value-field {
+    color: #515151;
+    font-weight: bold;
+    line-height: 25px;
+    font-size: 16px;
+    white-space: nowrap;
+}
+
+.fl-bs .slider-label {
+    color: #7f7f7f;
+}
+
+.fl-bs .slider-label .slider-label-tag {
+    font-weight: normal;
+}
+
+.fl-bs .slider-row {
+    margin-top: 7px;
+}
+
+.fl-bs .slider {
+    width: 100%;
+    display: block;
+    height: 6px;
+    background: #e3e3e4;
+    position: relative;
+}
+
+.fl-bs .no-padding {
+    padding: 0 !important;
+}
+
+.fl-bs .no-padding-left {
+    padding-left: 0 !important;
+}
+
+.fl-bs .no-padding-right {
+    padding-right: 0 !important;
+}
+
+.fl-bs .mobilede-brand {
+    display: block;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
