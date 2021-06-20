@@ -36,7 +36,7 @@ do_action('render-findleasing-header', $title, $canonical_url, $listing['thumbna
             <div id="content" class="site-main" role="main">
                 <div class="fl-bs">
                     <div class="row">
-                        <div class="col-12">
+                        <div class="col-12 fl-detail-title">
                             <h2><?php echo $listing['full_header']; ?></h2>
                         </div>
                         <div class="col-12 fl-offset-15">
@@ -53,30 +53,115 @@ do_action('render-findleasing-header', $title, $canonical_url, $listing['thumbna
                                             </ul>
                                         </div>
                                     </div>
-                                    <div class="row">
-                                        <div class="col-6 col-md-3 text-center">
-                                            <h5>Kilometer</h5>
-                                            <h4><?php if (!empty($listing['mileage'])) {
-                                                    echo number_format_i18n($listing['mileage']);
-                                                } ?> km.</h4>
-                                        </div>
-                                        <div class="col-6 col-md-3 text-center">
-                                            <h5>Årgang</h5>
-                                            <h4><?php if (!empty($listing['year'])) {
-                                                    echo $listing['year'];
-                                                } ?></h4>
-                                        </div>
-                                        <div class="col-6 col-md-3 text-center">
-                                            <h5>Brændstof</h5>
-                                            <h4><?php if (!empty($listing['fuel_type'])) {
-                                                    echo $listing['fuel_type'];
-                                                } ?></h4>
-                                        </div>
-                                        <div class="col-6 col-md-3 text-center">
-                                            <h5>Km/L</h5>
-                                            <h4><?php if (!empty($listing['efficiency'])) {
-                                                    echo number_format_i18n($listing['efficiency'], 1);
-                                                } ?></h4>
+                                    <div class="row fl-details-info">
+                                        <div class="info-wrapper">
+                                            <div class="row">
+                                                <div class="col-6 col-md-3 text-center">
+                                                    <h5>Kilometer</h5>
+                                                    <h4><?php if (!empty($listing['mileage'])) {
+                                                            echo number_format_i18n($listing['mileage']);
+                                                        } ?> km.</h4>
+                                                </div>
+                                                <div class="col-6 col-md-3 text-center">
+                                                    <h5>Årgang</h5>
+                                                    <h4><?php if (!empty($listing['year'])) {
+                                                            echo $listing['year'];
+                                                        } ?></h4>
+                                                </div>
+                                                <div class="col-6 col-md-3 text-center">
+                                                    <h5>Brændstof</h5>
+                                                    <h4><?php if (!empty($listing['fuel_type'])) {
+                                                            echo $listing['fuel_type'];
+                                                        } ?></h4>
+                                                </div>
+                                                <div class="col-6 col-md-3 text-center">
+                                                    <h5>Km/L</h5>
+                                                    <h4><?php if (!empty($listing['efficiency'])) {
+                                                            echo number_format_i18n($listing['efficiency'], 1);
+                                                        } ?></h4>
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="row">
+    
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <h3>Modeldata</h3>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="row text-muted">
+                                                    <div class="col-sm-6 col-12">
+                                                        <table class="table">
+                                                            <tbody>
+                                                            <tr>
+                                                                <td>HK / Nm</td>
+                                                                <td class="text-right"><?php echo(!empty($listing['power_in_hp']) ? $listing['power_in_hp'] . ' hk' : '-'); ?>
+                                                                    / <?php echo(!empty($listing['torque_in_nm']) ? $listing['torque_in_nm'] . ' nm' : '-'); ?></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>0 - 100 km/t</td>
+                                                                <td class="text-right">
+                                                                    <?php echo !empty($listing['acceleration_0_100_in_sec']) ? number_format_i18n($listing['acceleration_0_100_in_sec'], 1) . ' sek' : '-'; ?>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Tophastighed</td>
+                                                                <td class="text-right"><?php echo !empty($listing['max_speed_in_km_h']) ? number_format_i18n($listing['max_speed_in_km_h']) . ' km/t' : '-'; ?></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Km/l</td>
+                                                                <td class="text-right"><?php echo !empty($listing['efficiency']) ? number_format_i18n($listing['efficiency'], 1) . ' km/l' : '-'; ?></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Trækhjul</td>
+                                                                <td class="text-right"><?php echo !empty($listing['number_of_gears']) ? $listing['wheel_drive'] : '-'; ?></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Cylindre</td>
+                                                                <td class="text-right"><?php echo !empty($listing['cylinders']) ? $listing['cylinders'] : '-'; ?></td>
+                                                            </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                    <div class="col-sm-6 col-12">
+                                                        <table class="table">
+                                                            <tbody>
+                                                            <tr>
+                                                                <td>Totalvægt</td>
+                                                                <td class="text-right"><?php echo !empty($listing['total_weight_in_kg']) ? number_format_i18n($listing['total_weight_in_kg']) . ' kg' : '-'; ?></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Bredde</td>
+                                                                <td class="text-right"><?php echo !empty($listing['width_in_mm']) ? number_format_i18n($listing['width_in_mm'] / 10) . ' cm' : '-'; ?></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Længde</td>
+                                                                <td class="text-right"><?php echo !empty($listing['length_in_mm']) ? number_format_i18n($listing['length_in_mm'] / 10) . ' cm' : '-'; ?></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Højde</td>
+                                                                <td class="text-right"><?php echo !empty($listing['height_in_mm']) ? number_format_i18n($listing['height_in_mm'] / 10) . ' cm' : '-'; ?></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Gear Type</td>
+                                                                <td class="text-right"><?php echo !empty($listing['gear_type']) ? $listing['gear_type'] : '-'; ?></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Antal Gear</td>
+                                                                <td class="text-right"><?php echo !empty($listing['number_of_gears']) ? $listing['number_of_gears'] : '-'; ?></td>
+                                                            </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <h3>Beskrivelse</h3>
+                                            </div>
+                                            <div class="col-12">
+                                                <?php echo wpautop($listing['description']); ?>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -209,87 +294,7 @@ do_action('render-findleasing-header', $title, $canonical_url, $listing['thumbna
                                 </div>
                             </div>
                         </div>
-                        <div class="col-12">
-                            <div class="row">
-
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <h3>Beskrivelse</h3>
-                        </div>
-                        <div class="col-12">
-                            <?php echo wpautop($listing['description']); ?>
-                        </div>
-                        <div class="col-12">
-                            <h3>Modeldata</h3>
-                        </div>
-                        <div class="col-12">
-                            <div class="row text-muted">
-                                <div class="col-sm-6 col-12">
-                                    <table class="table">
-                                        <tbody>
-                                        <tr>
-                                            <td>HK / Nm</td>
-                                            <td class="text-right"><?php echo(!empty($listing['power_in_hp']) ? $listing['power_in_hp'] . ' hk' : '-'); ?>
-                                                / <?php echo(!empty($listing['torque_in_nm']) ? $listing['torque_in_nm'] . ' nm' : '-'); ?></td>
-                                        </tr>
-                                        <tr>
-                                            <td>0 - 100 km/t</td>
-                                            <td class="text-right">
-                                                <?php echo !empty($listing['acceleration_0_100_in_sec']) ? number_format_i18n($listing['acceleration_0_100_in_sec'], 1) . ' sek' : '-'; ?>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Tophastighed</td>
-                                            <td class="text-right"><?php echo !empty($listing['max_speed_in_km_h']) ? number_format_i18n($listing['max_speed_in_km_h']) . ' km/t' : '-'; ?></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Km/l</td>
-                                            <td class="text-right"><?php echo !empty($listing['efficiency']) ? number_format_i18n($listing['efficiency'], 1) . ' km/l' : '-'; ?></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Trækhjul</td>
-                                            <td class="text-right"><?php echo !empty($listing['number_of_gears']) ? $listing['wheel_drive'] : '-'; ?></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Cylindre</td>
-                                            <td class="text-right"><?php echo !empty($listing['cylinders']) ? $listing['cylinders'] : '-'; ?></td>
-                                        </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                                <div class="col-sm-6 col-12">
-                                    <table class="table">
-                                        <tbody>
-                                        <tr>
-                                            <td>Totalvægt</td>
-                                            <td class="text-right"><?php echo !empty($listing['total_weight_in_kg']) ? number_format_i18n($listing['total_weight_in_kg']) . ' kg' : '-'; ?></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Bredde</td>
-                                            <td class="text-right"><?php echo !empty($listing['width_in_mm']) ? number_format_i18n($listing['width_in_mm'] / 10) . ' cm' : '-'; ?></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Længde</td>
-                                            <td class="text-right"><?php echo !empty($listing['length_in_mm']) ? number_format_i18n($listing['length_in_mm'] / 10) . ' cm' : '-'; ?></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Højde</td>
-                                            <td class="text-right"><?php echo !empty($listing['height_in_mm']) ? number_format_i18n($listing['height_in_mm'] / 10) . ' cm' : '-'; ?></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Gear Type</td>
-                                            <td class="text-right"><?php echo !empty($listing['gear_type']) ? $listing['gear_type'] : '-'; ?></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Antal Gear</td>
-                                            <td class="text-right"><?php echo !empty($listing['number_of_gears']) ? $listing['number_of_gears'] : '-'; ?></td>
-                                        </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
+                        
                     </div>
                 </div>
 

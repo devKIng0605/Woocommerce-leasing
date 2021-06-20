@@ -12,6 +12,7 @@
 #fl-image-slider {
     display: none;
     margin-left: 0;
+    margin-bottom: 0;
     background-color: black;
 }
 
@@ -262,4 +263,25 @@ a .leasing-info {
     display: block;
     margin-top: 5px;
     margin-bottom: 10px;
+}
+
+.fl-detail-page .fl-bs {
+    margin-top: 15px;
+}
+.fl-detail-title {
+    font-weight: bold;
+    padding: 0px 15px 0 60px !important;
+}
+.fl-details-info {
+    margin: 0 !important;
+    padding: 40px 0;
+    background: #a76a0e;
+    color: #fff;
+}
+.fl-detail-page .slick-dots {
+    display: none !important;
+}
+.fl-details-info .info-wrapper {
+    background: #000;
+    padding: 60px;
 }
