@@ -406,3 +406,9 @@ a .leasing-info {
     font-style: italic;
     color: #000;
 }
+.fl-listing-page #primary {
+    width: 100%;
+}
+.fl-listing-page .ast-article-single {
+    display: none;
+}

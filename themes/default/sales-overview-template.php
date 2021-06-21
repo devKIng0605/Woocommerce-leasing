@@ -44,7 +44,7 @@ $action_url = home_url($wp->request);
 
 ?>
 
-    <div id="main-content" class="main-content">
+    <div id="main-content" class="main-content fl-listing-page">
 
         <div id="primary" class="content-area">
             <div id="content" class="site-main" role="main">
