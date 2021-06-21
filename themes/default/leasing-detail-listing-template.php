@@ -55,7 +55,10 @@ do_action('render-findleasing-header', $title, $canonical_url, $listing['thumbna
                                     </div>
                                     <div class="row fl-details-info">
                                         <div class="info-wrapper">
-                                            <div class="row">
+                                            <div class="col-12 info-title">
+                                                <h3>Info</h3>
+                                            </div>
+                                            <div class="row info-content">
                                                 <div class="col-6 col-md-3 text-center">
                                                     <h5>Kilometer</h5>
                                                     <h4><?php if (!empty($listing['mileage'])) {
@@ -81,45 +84,40 @@ do_action('render-findleasing-header', $title, $canonical_url, $listing['thumbna
                                                         } ?></h4>
                                                 </div>
                                             </div>
-                                            <div class="col-12">
-                                                <div class="row">
-    
-                                                </div>
+                                            <div class="col-12 info-title">
+                                                <h3>Specifikationer</h3>
                                             </div>
-                                            <div class="col-12">
-                                                <h3>Modeldata</h3>
-                                            </div>
-                                            <div class="col-12">
+                                            <div class="col-12 info-content">
                                                 <div class="row text-muted">
                                                     <div class="col-sm-6 col-12">
                                                         <table class="table">
                                                             <tbody>
                                                             <tr>
                                                                 <td>HK / Nm</td>
-                                                                <td class="text-right"><?php echo(!empty($listing['power_in_hp']) ? $listing['power_in_hp'] . ' hk' : '-'); ?>
+                                                                <td class="text-left"><?php echo(!empty($listing['power_in_hp']) ? $listing['power_in_hp'] . ' hk' : '-'); ?>
                                                                     / <?php echo(!empty($listing['torque_in_nm']) ? $listing['torque_in_nm'] . ' nm' : '-'); ?></td>
                                                             </tr>
                                                             <tr>
                                                                 <td>0 - 100 km/t</td>
-                                                                <td class="text-right">
+                                                                <td class="text-left">
                                                                     <?php echo !empty($listing['acceleration_0_100_in_sec']) ? number_format_i18n($listing['acceleration_0_100_in_sec'], 1) . ' sek' : '-'; ?>
                                                                 </td>
                                                             </tr>
                                                             <tr>
                                                                 <td>Tophastighed</td>
-                                                                <td class="text-right"><?php echo !empty($listing['max_speed_in_km_h']) ? number_format_i18n($listing['max_speed_in_km_h']) . ' km/t' : '-'; ?></td>
+                                                                <td class="text-left"><?php echo !empty($listing['max_speed_in_km_h']) ? number_format_i18n($listing['max_speed_in_km_h']) . ' km/t' : '-'; ?></td>
                                                             </tr>
                                                             <tr>
                                                                 <td>Km/l</td>
-                                                                <td class="text-right"><?php echo !empty($listing['efficiency']) ? number_format_i18n($listing['efficiency'], 1) . ' km/l' : '-'; ?></td>
+                                                                <td class="text-left"><?php echo !empty($listing['efficiency']) ? number_format_i18n($listing['efficiency'], 1) . ' km/l' : '-'; ?></td>
                                                             </tr>
                                                             <tr>
                                                                 <td>Trækhjul</td>
-                                                                <td class="text-right"><?php echo !empty($listing['number_of_gears']) ? $listing['wheel_drive'] : '-'; ?></td>
+                                                                <td class="text-left"><?php echo !empty($listing['number_of_gears']) ? $listing['wheel_drive'] : '-'; ?></td>
                                                             </tr>
                                                             <tr>
                                                                 <td>Cylindre</td>
-                                                                <td class="text-right"><?php echo !empty($listing['cylinders']) ? $listing['cylinders'] : '-'; ?></td>
+                                                                <td class="text-left"><?php echo !empty($listing['cylinders']) ? $listing['cylinders'] : '-'; ?></td>
                                                             </tr>
                                                             </tbody>
                                                         </table>
@@ -129,37 +127,37 @@ do_action('render-findleasing-header', $title, $canonical_url, $listing['thumbna
                                                             <tbody>
                                                             <tr>
                                                                 <td>Totalvægt</td>
-                                                                <td class="text-right"><?php echo !empty($listing['total_weight_in_kg']) ? number_format_i18n($listing['total_weight_in_kg']) . ' kg' : '-'; ?></td>
+                                                                <td class="text-left"><?php echo !empty($listing['total_weight_in_kg']) ? number_format_i18n($listing['total_weight_in_kg']) . ' kg' : '-'; ?></td>
                                                             </tr>
                                                             <tr>
                                                                 <td>Bredde</td>
-                                                                <td class="text-right"><?php echo !empty($listing['width_in_mm']) ? number_format_i18n($listing['width_in_mm'] / 10) . ' cm' : '-'; ?></td>
+                                                                <td class="text-left"><?php echo !empty($listing['width_in_mm']) ? number_format_i18n($listing['width_in_mm'] / 10) . ' cm' : '-'; ?></td>
                                                             </tr>
                                                             <tr>
                                                                 <td>Længde</td>
-                                                                <td class="text-right"><?php echo !empty($listing['length_in_mm']) ? number_format_i18n($listing['length_in_mm'] / 10) . ' cm' : '-'; ?></td>
+                                                                <td class="text-left"><?php echo !empty($listing['length_in_mm']) ? number_format_i18n($listing['length_in_mm'] / 10) . ' cm' : '-'; ?></td>
                                                             </tr>
                                                             <tr>
                                                                 <td>Højde</td>
-                                                                <td class="text-right"><?php echo !empty($listing['height_in_mm']) ? number_format_i18n($listing['height_in_mm'] / 10) . ' cm' : '-'; ?></td>
+                                                                <td class="text-left"><?php echo !empty($listing['height_in_mm']) ? number_format_i18n($listing['height_in_mm'] / 10) . ' cm' : '-'; ?></td>
                                                             </tr>
                                                             <tr>
                                                                 <td>Gear Type</td>
-                                                                <td class="text-right"><?php echo !empty($listing['gear_type']) ? $listing['gear_type'] : '-'; ?></td>
+                                                                <td class="text-left"><?php echo !empty($listing['gear_type']) ? $listing['gear_type'] : '-'; ?></td>
                                                             </tr>
                                                             <tr>
                                                                 <td>Antal Gear</td>
-                                                                <td class="text-right"><?php echo !empty($listing['number_of_gears']) ? $listing['number_of_gears'] : '-'; ?></td>
+                                                                <td class="text-left"><?php echo !empty($listing['number_of_gears']) ? $listing['number_of_gears'] : '-'; ?></td>
                                                             </tr>
                                                             </tbody>
                                                         </table>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-12">
-                                                <h3>Beskrivelse</h3>
+                                            <div class="col-12 info-title">
+                                                <h2>Om MB Group</h2>
                                             </div>
-                                            <div class="col-12">
+                                            <div class="col-12 info-content">
                                                 <?php echo wpautop($listing['description']); ?>
                                             </div>
                                         </div>

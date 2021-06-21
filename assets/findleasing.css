@@ -276,7 +276,7 @@ a .leasing-info {
     margin: 0 !important;
     padding: 40px 0;
     background: #a76a0e;
-    color: #fff;
+    color: #eee;
 }
 .fl-detail-page .slick-dots {
     display: none !important;
@@ -284,4 +284,31 @@ a .leasing-info {
 .fl-details-info .info-wrapper {
     background: #000;
     padding: 60px;
+}
+.info-wrapper .info-title {
+    margin-bottom: 30px;
+}
+.info-wrapper .info-title h3, .info-wrapper .info-title h2{
+    text-align: left;
+    font-weight: bold;
+    color: #fff;
+}
+.info-wrapper .info-content {
+    margin-bottom: 50px;
+}
+.info-wrapper .info-content table {
+    border-collapse: collapse;
+}
+.info-wrapper .info-content table tr {
+    border-bottom: 1px solid #eee;
+}
+.info-wrapper .info-content table tr .text-left {
+    width: 40%;
+}
+.info-wrapper .info-content table tr td, .info-wrapper .info-content table tr td{
+    border-width: 0px 0px 0px 0px;
+}
+.info-wrapper .info-content h4, .info-wrapper .info-content h5{
+    color: #eee;
+    font-weight: bold;
 }
