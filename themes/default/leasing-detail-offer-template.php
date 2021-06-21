@@ -38,7 +38,7 @@ do_action('render-findleasing-header', $title, $canonical_url, $offer['thumbnail
         <div id="content" class="site-main" role="main">
             <div class="fl-bs">
                 <div class="row">
-                    <div class="col-12">
+                    <div class="col-12 fl-detail-title">
                         <h2><?php echo $offer['full_title']; ?></h2>
                     </div>
                     <div class="col-12 text-center fl-offset-15">
