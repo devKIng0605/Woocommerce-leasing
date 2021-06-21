@@ -275,7 +275,7 @@ a .leasing-info {
 .fl-details-info {
     margin: 0 !important;
     padding: 40px 0;
-    background: #a76a0e;
+    background: #c78c36;
     color: #eee;
 }
 .fl-detail-page .slick-dots {
@@ -323,19 +323,20 @@ a .leasing-info {
     padding: 40px;
 }
 .fl-listing-page .car-item {
-    max-width: calc( 33.333333% - 26.666666px);
+    max-width: calc( 33.333333% - 40px);
     padding: 0;
+    margin-top: 30px;
     border: 1px solid #d3d3d3;
 }
 .fl-listing-page .car-item:nth-child(3n+1) {
-    margin-right: 20px;
+    margin-right: 30px;
 }
 .fl-listing-page .car-item:nth-child(3n+2) {
-    margin-left: 20px;
-    margin-right: 20px;
+    margin-left: 30px;
+    margin-right: 30px;
 }
 .fl-listing-page .car-item:nth-child(3n) {
-    margin-left: 20px;
+    margin-left: 30px;
 }
 .fl-listing-page .car-item img {
     width: 100%;
@@ -353,4 +354,55 @@ a .leasing-info {
 }
 .fl-listing-page .car-item .car-title .fl-sub-title {
     width: auto;
+    color: #a3a3a3;
+}
+.fl-listing-page .car-item .hide {
+    display: none;
+}
+.fl-listing-page .car-item .car-title .fl-title, .fl-listing-page .car-item .leasing-info h5 {
+    font-weight: bold;
+    font-size: 1.4em;
+}
+.fl-listing-page .car-item .leasing-info .fl-price {
+    font-size: 1.4em;
+    line-height: 32px;
+}
+.fl-listing-page .car-item .leasing-info .fl-price-monthly-value {
+    font-weight: normal;
+}
+.fl-listing-page .car-item .leasing-info .col-4 {
+    color: #a3a3a3;
+}
+.fl-listing-page .car-item .text-muted {
+    background: #c78d36;
+    color: #000;
+    font-size: 1.4em;
+    font-weight: bold;
+    margin-top: 20px;
+    padding: 0 10px;
+}
+.fl-listing-page .car-item .text-muted .row {
+    justify-content: space-around;
+    align-items: center;
+}
+.fl-listing-page .car-item .text-muted .no-padding {
+    padding: 10px 0 !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.fl-listing-page .car-item .text-muted .no-padding:nth-child(3n+1) {
+    border-right: 1px solid #fff;
+}
+.fl-listing-page .car-item .text-muted .no-padding:nth-child(3n) {
+    border-left: 1px solid #fff;
+}
+.fl-listing-page .car-item .text-muted .fl-stat-label {
+    margin-right: 10px;
+}
+.fl-listing-page .car-item .text-muted a {
+    font-weight: normal;
+    text-decoration: underline;
+    font-style: italic;
+    color: #000;
 }

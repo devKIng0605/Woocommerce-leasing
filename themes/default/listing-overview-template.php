@@ -101,8 +101,7 @@ $action_url = home_url($wp->request);
                         foreach ($response['results'] as $listing) {
                             ?>
                             <div class="<?php echo fl_get_row_classes(); ?> fl-offset-20 car-item">
-                                <a href="<?php echo fl_get_static_listing_url($listing); ?>"
-                                   title="<?php echo $listing['full_header']; ?>">
+                                
                                     <div class="row">
                                         <div class="col-12">
                                             <img src="<?php echo $listing['thumbnail_url']; ?>"
@@ -114,62 +113,43 @@ $action_url = home_url($wp->request);
                                         </div>
                                         <div class="col-12 leasing-info">
                                             <div class="row">
-                                                <div class="col-8">Periode</div>
+                                                <h5 class="col-8">Periode</h5>
                                                 <div class="col-4 text-right"><?php echo number_format_i18n($listing['leasing_time']); ?>
                                                     mdr.
                                                 </div>
                                             </div>
                                             <?php if (!empty($listing['kilometers'])) { ?>
                                                 <div class="row">
-                                                    <div class="col-8">Km. pr. år</div>
+                                                    <h5 class="col-8">Km. pr. år</h5>
                                                     <div class="col-4 text-right"><?php echo number_format_i18n($listing['kilometers']); ?>
                                                         km.
                                                     </div>
                                                 </div>
                                             <?php } ?>
                                             <div class="row">
-                                                <div class="col-8">Udbetaling</div>
-                                                <div class="col-4 text-right"><?php echo number_format_i18n(($price_tax ? $listing['first_pay'] : $listing['first_pay'] * 0.8)); ?>
+                                                <h5 class="col-6">Udbetaling</h5>
+                                                <div class="col-6 text-right fl-price"><?php echo number_format_i18n(($price_tax ? $listing['first_pay'] : $listing['first_pay'] * 0.8)); ?>
                                                     kr.
                                                 </div>
                                             </div>
                                             <?php if ($listing['funding'] === 'Finansiel') { ?>
                                                 <div class="row">
-                                                    <div class="col-6">Restværdi</div>
-                                                    <div class="col-6 text-right"><?php echo number_format_i18n((!$listing['remaining_value_tax'] ? ($listing['remaining_value'] * 0.8) : $listing['remaining_value'])); ?>
+                                                    <h5 class="col-6">Restværdi</h5>
+                                                    <div class="col-6 text-right fl-price"><?php echo number_format_i18n((!$listing['remaining_value_tax'] ? ($listing['remaining_value'] * 0.8) : $listing['remaining_value'])); ?>
                                                         kr. <?php echo(!$listing['remaining_value_tax'] ? 'ex. moms' : 'inkl. moms'); ?></div>
                                                 </div>
                                             <?php } ?>
-                                        </div>
-                                        <div class="col-12 text-muted">
-                                            <div class="row fl-offset-5">
-                                                <div class="col-6 col-md-3 text-center no-padding-right">
-                                                    <span class="fl-stat-label">Kilometer</span><br>
-                                                    <span class="fl-stat-value"><?php if (!empty($listing['mileage'])) {
-                                                            echo number_format_i18n($listing['mileage']);
-                                                        } ?></span>
-                                                </div>
-                                                <div class="col-6 col-md-3 text-center no-padding">
-                                                    <span class="fl-stat-label">Årgang</span><br>
-                                                    <span class="fl-stat-value"><?php if (!empty($listing['year'])) {
-                                                            echo $listing['year'];
-                                                        } ?></span>
-                                                </div>
-                                                <div class="col-6 col-md-3 text-center no-padding">
-                                                    <span class="fl-stat-label">Brændstof</span><br>
-                                                    <span class="fl-stat-value"><?php if (!empty($listing['fuel_type'])) {
-                                                            echo $listing['fuel_type'];
-                                                        } ?></span>
-                                                </div>
-                                                <div class="col-6 col-md-3 text-center no-padding-left">
-                                                    <span class="fl-stat-label">Km/L</span><br>
-                                                    <span class="fl-stat-value"><?php if (!empty($listing['efficiency'])) {
-                                                            echo number_format_i18n($listing['efficiency'], 1);
-                                                        } ?></span>
-                                                </div>
+                                            <div class="row">
+                                                <?php if (!empty($listing['price_monthly'])) { ?>
+                                                    <h5 class="col-6">Pr. mnd.</h5>
+                                                    <div class="col-6 text-right fl-price"><span
+                                                            class="fl-price-monthly-value"><?php echo number_format_i18n(($price_tax ? $listing['price_monthly'] : $listing['price_monthly'] * 0.8)); ?></span>kr.</div>
+                                                <?php } else { ?>
+                                                    <h5>Ring for pris</h5>
+                                                <?php } ?>
                                             </div>
                                         </div>
-                                        <div class="col-12 text-center fl-price-monthly-container fl-offset-5">
+                                        <div class="col-12 text-center fl-price-monthly-container fl-offset-5 hide">
                                             <div class="fl-price-monthly">
                                                 <?php if (!empty($listing['price_monthly'])) { ?>
                                                     Pr. mnd. <span
@@ -179,9 +159,39 @@ $action_url = home_url($wp->request);
                                                 <?php } ?>
                                             </div>
                                         </div>
-                                        
+                                        <div class="col-12 text-muted">
+                                            <div class="row fl-offset-5">
+                                                <div class="col-4 text-center no-padding">
+                                                    <span class="fl-stat-label">Årg. </span><br>
+                                                    <span class="fl-stat-value"> <?php if (!empty($listing['year'])) {
+                                                            echo $listing['year'];
+                                                        } ?></span>
+                                                </div>
+                                                <div class="col-4 text-center no-padding">
+                                                    <span class="fl-stat-label">Km. </span><br>
+                                                    <span class="fl-stat-value"> <?php if (!empty($listing['mileage'])) {
+                                                            echo number_format_i18n($listing['mileage']);
+                                                        } ?></span>
+                                                </div>
+                                                <div class="col-4 text-center no-padding">
+                                                <a href="<?php echo fl_get_static_listing_url($listing); ?>">Se detaljer</a>
+                                                </div>
+                                                <div class="col-6 col-md-3 text-center hide">
+                                                    <span class="fl-stat-label">Brændstof</span><br>
+                                                    <span class="fl-stat-value"><?php if (!empty($listing['fuel_type'])) {
+                                                            echo $listing['fuel_type'];
+                                                        } ?></span>
+                                                </div>
+                                                <div class="col-6 col-md-3 text-center hide">
+                                                    <span class="fl-stat-label">Km/L</span><br>
+                                                    <span class="fl-stat-value"><?php if (!empty($listing['efficiency'])) {
+                                                            echo number_format_i18n($listing['efficiency'], 1);
+                                                        } ?></span>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
-                                </a>
+                                
                             </div>
                             <?php
                         }
