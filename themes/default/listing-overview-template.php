@@ -174,7 +174,7 @@ $action_url = home_url($wp->request);
                                                         } ?></span>
                                                 </div>
                                                 <div class="col-4 text-center no-padding">
-                                                <a href="<?php echo fl_get_static_listing_url($listing); ?>">Se detaljer</a>
+                                                    <a href="<?php echo fl_get_static_listing_url($listing); ?>">Se detaljer</a>
                                                 </div>
                                                 <div class="col-6 col-md-3 text-center hide">
                                                     <span class="fl-stat-label">Brændstof</span><br>

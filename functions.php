@@ -74,62 +74,69 @@ function fl_embed_leasing_car_preview($offer) {
 
   ?>
 
-  <div class="<?php echo fl_get_row_classes(); ?> fl-offset-20">
-    <a href="<?php echo fl_get_leasing_listing_url($offer); ?>" title="<?php echo $offer['full_title']; ?>">
+  <div class="<?php echo fl_get_row_classes(); ?> fl-offset-20 car-item">
+    
       <div class="row">
-        <div class="col-12">
-          <h5 class="fl-title"><?php echo $car['make'] . ' ' . $car['model']; ?></h5>
-          <span class="fl-sub-title"><?php echo $offer['title']; ?></span>
-        </div>
         <div class="col-12">
           <img src="<?php echo $offer['thumbnail']; ?>" alt="<?php echo $offer['full_header'] ?>" class="fl-img-responsive">
         </div>
+        <div class="col-12 car-title">
+          <h5 class="fl-title"><?php echo $car['make'] . ' ' . $car['model']; ?></h5>
+          <span class="fl-sub-title"><?php echo $offer['title']; ?></span>
+        </div>
+        
+        <div class="col-12 leasing-info">
+          <div class="row">
+            <h5 class="col-8">Periode</h5>
+            <div class="col-4 text-right"><?php echo number_format_i18n($offer['period']); ?> mdr.</div>
+          </div>
+          <div class="row">
+            <h5 class="col-6">Udbetaling</h5>
+            <div class="col-6 text-right fl-price"><?php echo number_format_i18n(($price_tax ? $offer['first_pay_tax'] : $offer['first_pay'])); ?> kr.</div>
+          </div>
+          <?php if ($offer['funding']['id'] === 1) { ?>
+          <div class="row">
+            <h5 class="col-6">Restværdi</h5>
+            <div class="col-6 text-right fl-price"><?php echo number_format_i18n($offer['remaining_value']); ?> kr. <?php echo ($price_tax && !$offer['price_tax'] ? 'ex. moms' : (!$price_tax && $offer['price_tax'] ? 'inkl. moms' : '')); ?></div>
+          </div>
+          <div class="row">
+            <h5 class="col-6">Pr. mnd.</h5>
+            <div class="col-6 text-right fl-price">
+              <span class="fl-price-monthly-value"><?php echo number_format_i18n(($price_tax ? $offer['price_monthly_tax'] : $offer['price_monthly'])); ?></span> kr.
+            </div>
+          </div>
+          <?php } ?>
+        </div>
+        <div class="col-12 text-center fl-price-monthly-container fl-offset-5 hide">
+          <div class="fl-price-monthly">
+            Pr. mnd. <span class="fl-price-monthly-value"><?php echo number_format_i18n(($price_tax ? $offer['price_monthly_tax'] : $offer['price_monthly'])); ?></span> kr.
+          </div>
+        </div>
         <div class="col-12 text-muted">
           <div class="row fl-offset-5">
-            <div class="col-6 col-md-3 text-center">
+            <div class="col-4 text-center no-padding">
               <span class="fl-stat-label">Kilometer</span><br>
               <span class="fl-stat-value"><?php echo number_format_i18n($offer['car']['mileage']); ?></span>
             </div>
-            <div class="col-6 col-md-3 text-center">
+            <div class="col-4 text-center no-padding">
               <span class="fl-stat-label">Årgang</span><br>
               <span class="fl-stat-value"><?php echo $car['year']; ?></span>
             </div>
-            <div class="col-6 col-md-3 text-center">
+            <div class="col-4 text-center no-padding">
+              <a href="<?php echo fl_get_leasing_listing_url($offer); ?>" title="<?php echo $offer['full_title']; ?>">Se detaljer</a>
+            </div>
+            <div class="col-6 col-md-3 text-center hide">
               <span class="fl-stat-label">Brændstof</span><br>
               <span class="fl-stat-value"><?php echo $car['fuel_type']; ?></span>
             </div>
-            <div class="col-6 col-md-3 text-center">
+            <div class="col-6 col-md-3 text-center hide">
               <span class="fl-stat-label">Km/L</span><br>
               <span class="fl-stat-value"><?php echo number_format_i18n($car['efficiency'], 1); ?></span>
             </div>
           </div>
         </div>
-        <div class="col-12 text-center fl-price-monthly-container fl-offset-5">
-          <div class="fl-price-monthly">
-            Pr. mnd. <span class="fl-price-monthly-value"><?php echo number_format_i18n(($price_tax ? $offer['price_monthly_tax'] : $offer['price_monthly'])); ?></span> kr.
-          </div>
-        </div>
-        <div class="col-12 leasing-info">
-          <div class="row">
-            <div class="col-8">Periode</div>
-            <div class="col-4 text-right"><?php echo number_format_i18n($offer['period']); ?> mdr.</div>
-          </div>
-          <div class="row">
-            <div class="col-8">Udbetaling</div>
-            <div class="col-4 text-right"><?php echo number_format_i18n(($price_tax ? $offer['first_pay_tax'] : $offer['first_pay'])); ?> kr.</div>
-          </div>
-          <?php if ($offer['funding']['id'] === 1) { ?>
-          <div class="row">
-            <div class="col-6">Restværdi</div>
-            <div class="col-6 text-right"><?php echo number_format_i18n($offer['remaining_value']); ?> kr. <?php echo ($price_tax && !$offer['price_tax'] ? 'ex. moms' : (!$price_tax && $offer['price_tax'] ? 'inkl. moms' : '')); ?></div>
-          </div>
-          <?php } ?>
-        </div>
-        <div class="col-12">
-          <hr class="fl-border-bottom">
-        </div>
+        
       </div>
-    </a>
   </div>
 
   <?php 

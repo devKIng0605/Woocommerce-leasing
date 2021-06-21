@@ -316,7 +316,7 @@ a .leasing-info {
     display: flex;
     align-items: center;
 }
-.info-wrapper .info-content p {
+.info-wrapper .info-content p, .info-wrapper .info-content .mobilede-brand{
     text-align: left;
 }
 .fl-listing-page .fl-bs {
