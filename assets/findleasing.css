@@ -312,3 +312,45 @@ a .leasing-info {
     color: #eee;
     font-weight: bold;
 }
+.info-wrapper .info-content .display-flex {
+    display: flex;
+    align-items: center;
+}
+.info-wrapper .info-content p {
+    text-align: left;
+}
+.fl-listing-page .fl-bs {
+    padding: 40px;
+}
+.fl-listing-page .car-item {
+    max-width: calc( 33.333333% - 26.666666px);
+    padding: 0;
+    border: 1px solid #d3d3d3;
+}
+.fl-listing-page .car-item:nth-child(3n+1) {
+    margin-right: 20px;
+}
+.fl-listing-page .car-item:nth-child(3n+2) {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.fl-listing-page .car-item:nth-child(3n) {
+    margin-left: 20px;
+}
+.fl-listing-page .car-item img {
+    width: 100%;
+}
+.fl-listing-page .car-item .row {
+    margin: 0;
+}
+.fl-listing-page .car-item .row .col-12:first-child {
+    padding: 0;
+}
+.fl-listing-page .car-item .car-title {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 30px 0 30px;
+}
+.fl-listing-page .car-item .car-title .fl-sub-title {
+    width: auto;
+}

@@ -59,29 +59,32 @@ do_action('render-findleasing-header', $title, $canonical_url, $listing['thumbna
                                                 <h3>Info</h3>
                                             </div>
                                             <div class="row info-content">
-                                                <div class="col-6 col-md-3 text-center">
-                                                    <h5>Kilometer</h5>
-                                                    <h4><?php if (!empty($listing['mileage'])) {
+                                                <div class="col-6 col-md-3 text-center display-flex">
+                                                    <img src="<?php echo FIND_LEASING_PLUGIN_URL;?>/assets/img/speedometer.png" alt="">
+                                                    <h4>km. <?php if (!empty($listing['mileage'])) {
                                                             echo number_format_i18n($listing['mileage']);
-                                                        } ?> km.</h4>
+                                                        } ?></h4>
                                                 </div>
-                                                <div class="col-6 col-md-3 text-center">
-                                                    <h5>Årgang</h5>
+                                                <div class="col-6 col-md-3 text-center display-flex">
+                                                    <img src="<?php echo FIND_LEASING_PLUGIN_URL;?>/assets/img/calendar.png" alt="">
+                                                    <h5>Årg.</h5>
                                                     <h4><?php if (!empty($listing['year'])) {
                                                             echo $listing['year'];
                                                         } ?></h4>
                                                 </div>
-                                                <div class="col-6 col-md-3 text-center">
-                                                    <h5>Brændstof</h5>
+                                                <div class="col-6 col-md-3 text-center display-flex">
+                                                    <!-- <h5>Brændstof</h5> -->
+                                                    <img src="<?php echo FIND_LEASING_PLUGIN_URL;?>/assets/img/oil.png" alt="">
                                                     <h4><?php if (!empty($listing['fuel_type'])) {
                                                             echo $listing['fuel_type'];
                                                         } ?></h4>
                                                 </div>
-                                                <div class="col-6 col-md-3 text-center">
-                                                    <h5>Km/L</h5>
+                                                <div class="col-6 col-md-3 text-center display-flex">
+                                                    <img src="<?php echo FIND_LEASING_PLUGIN_URL;?>/assets/img/paint.png" alt="">
                                                     <h4><?php if (!empty($listing['efficiency'])) {
                                                             echo number_format_i18n($listing['efficiency'], 1);
                                                         } ?></h4>
+                                                    <h5>Km/L</h5>
                                                 </div>
                                             </div>
                                             <div class="col-12 info-title">
@@ -157,7 +160,7 @@ do_action('render-findleasing-header', $title, $canonical_url, $listing['thumbna
                                             <div class="col-12 info-title">
                                                 <h2>Om MB Group</h2>
                                             </div>
-                                            <div class="col-12 info-content">
+                                            <div class="col-12 info-content text-left">
                                                 <?php echo wpautop($listing['description']); ?>
                                             </div>
                                         </div>

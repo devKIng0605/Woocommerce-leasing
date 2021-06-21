@@ -8,7 +8,6 @@
 if ( ! defined( 'ABSPATH' ) ) {
     exit;
 }
-
 $page_size = 24;
 
 $api = new FindLeasingAPI(get_option('findleasing-offers-api-key'));
@@ -46,7 +45,7 @@ $action_url = home_url($wp->request);
 
 ?>
 
-    <div id="main-content" class="main-content">
+    <div id="main-content" class="main-content fl-listing-page">
 
         <div id="primary" class="content-area">
             <div id="content" class="site-main" role="main">
@@ -101,17 +100,46 @@ $action_url = home_url($wp->request);
                         <?php
                         foreach ($response['results'] as $listing) {
                             ?>
-                            <div class="<?php echo fl_get_row_classes(); ?> fl-offset-20">
+                            <div class="<?php echo fl_get_row_classes(); ?> fl-offset-20 car-item">
                                 <a href="<?php echo fl_get_static_listing_url($listing); ?>"
                                    title="<?php echo $listing['full_header']; ?>">
                                     <div class="row">
                                         <div class="col-12">
+                                            <img src="<?php echo $listing['thumbnail_url']; ?>"
+                                                 alt="<?php echo $listing['full_header'] ?>" class="fl-img-responsive">
+                                        </div>
+                                        <div class="col-12 car-title">
                                             <h5 class="fl-title"><?php echo $listing['make'] . ' ' . $listing['model']; ?></h5>
                                             <span class="fl-sub-title"><?php echo $listing['header']; ?></span>
                                         </div>
-                                        <div class="col-12">
-                                            <img src="<?php echo $listing['thumbnail_url']; ?>"
-                                                 alt="<?php echo $listing['full_header'] ?>" class="fl-img-responsive">
+                                        <div class="col-12 leasing-info">
+                                            <div class="row">
+                                                <div class="col-8">Periode</div>
+                                                <div class="col-4 text-right"><?php echo number_format_i18n($listing['leasing_time']); ?>
+                                                    mdr.
+                                                </div>
+                                            </div>
+                                            <?php if (!empty($listing['kilometers'])) { ?>
+                                                <div class="row">
+                                                    <div class="col-8">Km. pr. år</div>
+                                                    <div class="col-4 text-right"><?php echo number_format_i18n($listing['kilometers']); ?>
+                                                        km.
+                                                    </div>
+                                                </div>
+                                            <?php } ?>
+                                            <div class="row">
+                                                <div class="col-8">Udbetaling</div>
+                                                <div class="col-4 text-right"><?php echo number_format_i18n(($price_tax ? $listing['first_pay'] : $listing['first_pay'] * 0.8)); ?>
+                                                    kr.
+                                                </div>
+                                            </div>
+                                            <?php if ($listing['funding'] === 'Finansiel') { ?>
+                                                <div class="row">
+                                                    <div class="col-6">Restværdi</div>
+                                                    <div class="col-6 text-right"><?php echo number_format_i18n((!$listing['remaining_value_tax'] ? ($listing['remaining_value'] * 0.8) : $listing['remaining_value'])); ?>
+                                                        kr. <?php echo(!$listing['remaining_value_tax'] ? 'ex. moms' : 'inkl. moms'); ?></div>
+                                                </div>
+                                            <?php } ?>
                                         </div>
                                         <div class="col-12 text-muted">
                                             <div class="row fl-offset-5">
@@ -151,38 +179,7 @@ $action_url = home_url($wp->request);
                                                 <?php } ?>
                                             </div>
                                         </div>
-                                        <div class="col-12 leasing-info">
-                                            <div class="row">
-                                                <div class="col-8">Periode</div>
-                                                <div class="col-4 text-right"><?php echo number_format_i18n($listing['leasing_time']); ?>
-                                                    mdr.
-                                                </div>
-                                            </div>
-                                            <?php if (!empty($listing['kilometers'])) { ?>
-                                                <div class="row">
-                                                    <div class="col-8">Km. pr. år</div>
-                                                    <div class="col-4 text-right"><?php echo number_format_i18n($listing['kilometers']); ?>
-                                                        km.
-                                                    </div>
-                                                </div>
-                                            <?php } ?>
-                                            <div class="row">
-                                                <div class="col-8">Udbetaling</div>
-                                                <div class="col-4 text-right"><?php echo number_format_i18n(($price_tax ? $listing['first_pay'] : $listing['first_pay'] * 0.8)); ?>
-                                                    kr.
-                                                </div>
-                                            </div>
-                                            <?php if ($listing['funding'] === 'Finansiel') { ?>
-                                                <div class="row">
-                                                    <div class="col-6">Restværdi</div>
-                                                    <div class="col-6 text-right"><?php echo number_format_i18n((!$listing['remaining_value_tax'] ? ($listing['remaining_value'] * 0.8) : $listing['remaining_value'])); ?>
-                                                        kr. <?php echo(!$listing['remaining_value_tax'] ? 'ex. moms' : 'inkl. moms'); ?></div>
-                                                </div>
-                                            <?php } ?>
-                                        </div>
-                                        <div class="col-12">
-                                            <hr class="fl-border-bottom">
-                                        </div>
+                                        
                                     </div>
                                 </a>
                             </div>
