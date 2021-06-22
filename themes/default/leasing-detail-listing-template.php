@@ -8,7 +8,6 @@
 if ( ! defined( 'ABSPATH' ) ) {
     exit;
 }
-
 $listing_id = get_query_var('listing_id');
 $api = new FindLeasingAPI(get_option('findleasing-offers-api-key'));
 $price_tax = get_option('findleasing-offers-tax') == 'inclusive';
@@ -28,6 +27,8 @@ $title = $listing['full_header'];
 $canonical_url = fl_get_static_listing_url($listing);
 
 do_action('render-findleasing-header', $title, $canonical_url, $listing['thumbnail_url']);
+
+//include FIND_LEASING_PLUGIN_URL . '/templates/search-filter.php';
 
 ?>
 
