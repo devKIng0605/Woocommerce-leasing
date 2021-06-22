@@ -42,7 +42,7 @@ do_action('render-findleasing-header', $title, $canonical_url, $listing['thumbna
                         </div>
                         <div class="col-12 fl-offset-15">
                             <div class="row">
-                                <div class="col-8 text-center">
+                                <div class="col-8 text-center left-pan">
                                     <div class="row">
                                         <div class="col-12">
                                             <ul id="fl-image-slider">
@@ -167,7 +167,7 @@ do_action('render-findleasing-header', $title, $canonical_url, $listing['thumbna
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-4">
+                                <div class="col-4 right-pan">
                                     <div class="row">
                                         <div class="col-12 text-center">
                                             <div class="ownership-buttons">

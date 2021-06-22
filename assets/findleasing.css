@@ -429,3 +429,50 @@ a .leasing-info {
     margin-left: -20px !important;
     margin-right: -20px !important;
 }
+.fl-details-info .info-content img {
+    width: 100px;
+}
+@media (max-width: 1224px) {
+    .fl-bs>.row {
+        margin: 0;
+    }
+    .fl-detail-page .fl-bs .left-pan {
+        flex: none;
+        max-width: 100%;
+        padding: 0;
+    }
+    .fl-detail-page .fl-bs .right-pan {
+        flex: none;
+        max-width: 100%;
+        padding: 20px;
+    }
+    .fl-detail-page .margin-20 {
+        margin: 0 !important;
+    }
+}
+@media (max-width: 768px) {
+    .fl-details-info .info-wrapper {
+        padding: 40px 20px;
+    }
+    .info-wrapper .info-title {
+        margin-bottom: 10px;
+    }
+    .fl-details-info .info-content img {
+        width: 80px;
+    }
+    .info-wrapper .info-content table tr .text-left {
+        width: 50%;
+    }
+    .fl-detail-title {
+        font-weight: normal;
+        padding: 0px 15px 0 30px !important;
+    }
+    .info-wrapper .info-content {
+        margin-bottom: 30px;
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .info-wrapper .info-content .display-flex {
+        padding: 0;
+    }
+}

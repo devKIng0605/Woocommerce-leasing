@@ -43,7 +43,7 @@ do_action('render-findleasing-header', $title, $canonical_url, $offer['thumbnail
                     </div>
                     <div class="col-12 text-center fl-offset-15">
                         <div class="row">
-                            <div class="col-9 text-center">
+                            <div class="col-9 text-center left-pan">
                                 <div class="row">
                                     <div class="col-12">
                                         <ul id="fl-image-slider">
@@ -167,7 +167,7 @@ do_action('render-findleasing-header', $title, $canonical_url, $offer['thumbnail
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-3 text-center">
+                            <div class="col-3 text-center right-pan">
                                 <div id="findleasing-sliders-embed-div" data-findleasing data-width="100%" data-id="<?php echo $offer_id ?>" data-color="" data-tax="<?php echo ($price_tax ? '1' : '0'); ?>"></div>
                                 <script src="https://www.findleasing.nu/static/javascript/embed-sliders.js"></script>
                             </div>
