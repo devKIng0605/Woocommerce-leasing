@@ -270,7 +270,7 @@ a .leasing-info {
 }
 .fl-detail-title {
     font-weight: bold;
-    padding: 0px 15px 0 60px !important;
+    padding: 0px 15px 0 45px !important;
 }
 .fl-details-info {
     margin: 0 !important;
@@ -311,6 +311,7 @@ a .leasing-info {
 .info-wrapper .info-content h4, .info-wrapper .info-content h5{
     color: #eee;
     font-weight: bold;
+    z-index: 5;
 }
 .info-wrapper .info-content .display-flex {
     display: flex;
@@ -425,29 +426,55 @@ a .leasing-info {
 .fl-detail-page .fl-detail-image {
     padding: 0;
 }
-.fl-detail-page .margin-20 {
+.fl-detail-page.margin-20 {
+    max-width: calc(100% + 40px);
+    width: calc(100% + 40px);
     margin-left: -20px !important;
     margin-right: -20px !important;
 }
 .fl-details-info .info-content img {
     width: 100px;
 }
-@media (max-width: 1224px) {
-    .fl-bs>.row {
-        margin: 0;
+@media (max-width: 1440px) {
+    .info-wrapper .info-content .display-flex {
+        max-width: 50%;
+        flex: none;
     }
+    .fl-detail-page.margin-20 .info-wrapper .info-content .display-flex {
+        max-width: 50% !important;
+        flex: none !important;
+    }
+}
+.fl-bs .row {
+    margin: 0;
+}
+.fl-bs .col-12 {
+    padding: 0;
+}
+.fl-detail-page .fl-bs .left-pan {
+    padding: 0;
+}
+.fl-detail-page .fl-bs .right-pan>.row{
+    margin: 10px;
+}
+@media (max-width: 1224px) {
     .fl-detail-page .fl-bs .left-pan {
         flex: none;
         max-width: 100%;
-        padding: 0;
     }
     .fl-detail-page .fl-bs .right-pan {
         flex: none;
         max-width: 100%;
         padding: 20px;
     }
-    .fl-detail-page .margin-20 {
-        margin: 0 !important;
+    .info-wrapper .info-content .display-flex {
+        flex: 0 0 25%;
+        max-width: 25%;
+    }
+}
+@media (max-width: 840px) {
+    .fl-details-info .info-content img {
+        width: 80px;
     }
 }
 @media (max-width: 768px) {
@@ -457,15 +484,12 @@ a .leasing-info {
     .info-wrapper .info-title {
         margin-bottom: 10px;
     }
-    .fl-details-info .info-content img {
-        width: 80px;
-    }
     .info-wrapper .info-content table tr .text-left {
         width: 50%;
     }
     .fl-detail-title {
         font-weight: normal;
-        padding: 0px 15px 0 30px !important;
+        padding: 0px 15px !important;
     }
     .info-wrapper .info-content {
         margin-bottom: 30px;
@@ -474,5 +498,16 @@ a .leasing-info {
     }
     .info-wrapper .info-content .display-flex {
         padding: 0;
+    }
+}
+@media (max-width: 768px) {
+    .info-wrapper .info-content .display-flex {
+        max-width: 50%;
+        flex: none;
+    }
+}
+@media (max-width: 440px) {
+    .fl-detail-page.margin-20 .info-wrapper .info-content .display-flex {
+        max-width: 100% !important;
     }
 }

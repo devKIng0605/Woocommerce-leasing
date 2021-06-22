@@ -62,13 +62,14 @@ do_action('render-findleasing-header', $title, $canonical_url, $listing['thumbna
                                             <div class="row info-content">
                                                 <div class="col-6 col-md-3 text-center display-flex">
                                                     <img src="<?php echo FIND_LEASING_PLUGIN_URL;?>/assets/img/speedometer.png" alt="">
-                                                    <h4>km. <?php if (!empty($listing['mileage'])) {
+                                                    <h4>km. </h4>
+                                                    <h4><?php if (!empty($listing['mileage'])) {
                                                             echo number_format_i18n($listing['mileage']);
                                                         } ?></h4>
                                                 </div>
                                                 <div class="col-6 col-md-3 text-center display-flex">
                                                     <img src="<?php echo FIND_LEASING_PLUGIN_URL;?>/assets/img/calendar.png" alt="">
-                                                    <h5>Årg.</h5>
+                                                    <h4>Årg. </h4>
                                                     <h4><?php if (!empty($listing['year'])) {
                                                             echo $listing['year'];
                                                         } ?></h4>
@@ -85,7 +86,7 @@ do_action('render-findleasing-header', $title, $canonical_url, $listing['thumbna
                                                     <h4><?php if (!empty($listing['efficiency'])) {
                                                             echo number_format_i18n($listing['efficiency'], 1);
                                                         } ?></h4>
-                                                    <h5>Km/L</h5>
+                                                    <h4>Km/L</h4>
                                                 </div>
                                             </div>
                                             <div class="col-12 info-title">

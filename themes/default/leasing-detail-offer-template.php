@@ -64,11 +64,12 @@ do_action('render-findleasing-header', $title, $canonical_url, $offer['thumbnail
                                             <div class="row">
                                                 <div class="col-6 col-md-3 text-center display-flex">
                                                     <img src="<?php echo FIND_LEASING_PLUGIN_URL;?>/assets/img/speedometer.png" alt="">
-                                                    <h4>km. <?php echo number_format_i18n($car['mileage']); ?></h4>
+                                                    <h4>km. </h4>
+                                                    <h4><?php echo number_format_i18n($car['mileage']); ?></h4>
                                                 </div>
                                                 <div class="col-6 col-md-3 text-center display-flex">
                                                     <img src="<?php echo FIND_LEASING_PLUGIN_URL;?>/assets/img/calendar.png" alt="">
-                                                    <h5>Årgang</h5>
+                                                    <h4>Årg.</h4>
                                                     <h4><?php echo $car['year']; ?></h4>
                                                 </div>
                                                 <div class="col-6 col-md-3 text-center display-flex">
@@ -78,7 +79,7 @@ do_action('render-findleasing-header', $title, $canonical_url, $offer['thumbnail
                                                 <div class="col-6 col-md-3 text-center display-flex">
                                                     <img src="<?php echo FIND_LEASING_PLUGIN_URL;?>/assets/img/paint.png" alt="">
                                                     <h4><?php echo number_format_i18n($car['efficiency'], 1); ?></h4>
-                                                    <h5>Km/L</h5>
+                                                    <h4>Km/L</h4>
                                                 </div>
                                             </div>
                                         </div>
