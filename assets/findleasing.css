@@ -325,7 +325,7 @@ a .leasing-info {
 .fl-listing-page .car-item {
     max-width: calc( 33.333333% - 40px);
     padding: 0;
-    margin-top: 30px;
+    margin-top: 40px;
     border: 1px solid #d3d3d3;
 }
 .fl-listing-page .car-item:nth-child(3n+1) {
@@ -408,7 +408,24 @@ a .leasing-info {
 }
 .fl-listing-page #primary {
     width: 100%;
+    margin-top: 0 !important;
 }
 .fl-listing-page .ast-article-single {
     display: none;
+}
+.ast-container {
+    max-width: 100% !important;
+}
+.fl-sale-page .fl-bs {
+    padding: 40px 20px;
+}
+.fl-detail-page #primary {
+    margin-top: 0 !important;
+}
+.fl-detail-page .fl-detail-image {
+    padding: 0;
+}
+.fl-detail-page .margin-20 {
+    margin-left: -20px !important;
+    margin-right: -20px !important;
 }

@@ -44,7 +44,7 @@ $action_url = home_url($wp->request);
 
 ?>
 
-    <div id="main-content" class="main-content fl-listing-page">
+    <div id="main-content" class="main-content fl-listing-page fl-sale-page">
 
         <div id="primary" class="content-area">
             <div id="content" class="site-main" role="main">
@@ -97,53 +97,59 @@ $action_url = home_url($wp->request);
                         foreach ($response['results'] as $offer) {
                             $car = $offer['car'];
                             ?>
-                            <div class="<?php echo esc_attr(fl_get_row_classes()); ?> fl-offset-20">
-                                <a href="<?php echo esc_attr(fl_get_sales_listing_url($offer)); ?>"
-                                   title="<?php echo esc_attr($offer['full_title']); ?>">
+                            <div class="<?php echo esc_attr(fl_get_row_classes()); ?> fl-offset-20 car-item">
+                                
                                     <div class="row">
-                                        <div class="col-12">
-                                            <h5 class="fl-title"><?php echo $car['make'] . ' ' . $car['model']; ?></h5>
-                                            <span class="fl-sub-title"><?php echo $offer['title']; ?></span>
-                                        </div>
                                         <div class="col-12">
                                             <img src="<?php echo esc_attr($offer['thumbnail']); ?>"
                                                  alt="<?php echo esc_attr($offer['full_title']) ?>"
                                                  class="fl-img-responsive">
                                         </div>
-                                        <div class="col-12 text-muted">
-                                            <div class="row fl-offset-5"
-                                                 style="margin-left: -15px; margin-right: -15px">
-                                                <div class="col-6 col-md-3 text-center">
-                                                    <span class="fl-stat-label">Kilometer</span><br>
-                                                    <span class="fl-stat-value"><?php echo number_format_i18n($offer['car']['mileage']); ?></span>
-                                                </div>
-                                                <div class="col-6 col-md-3 text-center">
-                                                    <span class="fl-stat-label">Årgang</span><br>
-                                                    <span class="fl-stat-value"><?php echo $car['year']; ?></span>
-                                                </div>
-                                                <div class="col-6 col-md-3 text-center">
-                                                    <span class="fl-stat-label">Brændstof</span><br>
-                                                    <span class="fl-stat-value"><?php echo $car['fuel_type']; ?></span>
-                                                </div>
-                                                <div class="col-6 col-md-3 text-center">
-                                                    <span class="fl-stat-label">Km/L</span><br>
-                                                    <span class="fl-stat-value"><?php echo number_format_i18n($car['efficiency'], 1); ?></span>
+                                        <div class="col-12 car-title">
+                                            <h5 class="fl-title"><?php echo $car['make'] . ' ' . $car['model']; ?></h5>
+                                            <span class="fl-sub-title"><?php echo $offer['title']; ?></span>
+                                        </div>
+                                        <div class="col-12 leasing-info">
+                                            <div class="row">
+                                                <h5 class="col-6">Pr. mnd.</h5>
+                                                <div class="col-6 text-right fl-price">
+                                                    <span class="fl-price-monthly-value fl-detail-price-value"><?php echo number_format_i18n($offer['detail_price']); ?></span>
+                                                    kr.
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-12 text-center fl-price-monthly-container fl-offset-5">
+                                        <div class="col-12 text-center fl-price-monthly-container fl-offset-5 hide">
                                             <div class="fl-price-monthly">
                                                 <span class="fl-price-monthly-value fl-detail-price-value"><?php echo number_format_i18n($offer['detail_price']); ?></span>
                                                 kr.
                                             </div>
                                         </div>
-                                        <div class="col-12">
-                                            <hr class="fl-border-bottom">
+                                        <div class="col-12 text-muted">
+                                            <div class="row fl-offset-5" style="margin-left: -15px; margin-right: -15px">
+                                                 <div class="col-4 text-center no-padding">
+                                                    <span class="fl-stat-label">Årg. </span><br>
+                                                    <span class="fl-stat-value"><?php echo $car['year']; ?></span>
+                                                </div>
+                                                <div class="col-4 text-center no-padding">
+                                                    <span class="fl-stat-label">Km. </span><br>
+                                                    <span class="fl-stat-value"><?php echo number_format_i18n($offer['car']['mileage']); ?></span>
+                                                </div>
+                                                <div class="col-4 text-center no-padding">
+                                                <a href="<?php echo esc_attr(fl_get_sales_listing_url($offer)); ?>" title="<?php echo esc_attr($offer['full_title']); ?>"> Se detaljer</a>
+                                                </div>
+                                                <div class="col-6 col-md-3 text-center hide">
+                                                    <span class="fl-stat-label">Brændstof</span><br>
+                                                    <span class="fl-stat-value"><?php echo $car['fuel_type']; ?></span>
+                                                </div>
+                                                <div class="col-6 col-md-3 text-center hide">
+                                                    <span class="fl-stat-label">Km/L</span><br>
+                                                    <span class="fl-stat-value"><?php echo number_format_i18n($car['efficiency'], 1); ?></span>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
-                                </a>
                             </div>
-                            <?php
+                        <?php
                         }
                         ?>
                     </div>
