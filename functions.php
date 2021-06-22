@@ -91,17 +91,17 @@ function fl_embed_leasing_car_preview($offer) {
             <div class="col-4 text-right"><?php echo number_format_i18n($offer['period']); ?> mdr.</div>
           </div>
           <div class="row">
-            <h5 class="col-6">Udbetaling</h5>
-            <div class="col-6 text-right fl-price"><?php echo number_format_i18n(($price_tax ? $offer['first_pay_tax'] : $offer['first_pay'])); ?> kr.</div>
+            <h5 class="col-4">Udbetaling</h5>
+            <div class="col-8 text-right fl-price"><?php echo number_format_i18n(($price_tax ? $offer['first_pay_tax'] : $offer['first_pay'])); ?> kr.</div>
           </div>
           <?php if ($offer['funding']['id'] === 1) { ?>
           <div class="row">
-            <h5 class="col-6">Restværdi</h5>
-            <div class="col-6 text-right fl-price"><?php echo number_format_i18n($offer['remaining_value']); ?> kr. <?php echo ($price_tax && !$offer['price_tax'] ? 'ex. moms' : (!$price_tax && $offer['price_tax'] ? 'inkl. moms' : '')); ?></div>
+            <h5 class="col-4">Restværdi</h5>
+            <div class="col-8 text-right fl-price"><?php echo number_format_i18n($offer['remaining_value']); ?> kr. <?php echo ($price_tax && !$offer['price_tax'] ? 'ex. moms' : (!$price_tax && $offer['price_tax'] ? 'inkl. moms' : '')); ?></div>
           </div>
           <div class="row">
-            <h5 class="col-6">Pr. mnd.</h5>
-            <div class="col-6 text-right fl-price">
+            <h5 class="col-4">Pr. mnd.</h5>
+            <div class="col-8 text-right fl-price">
               <span class="fl-price-monthly-value"><?php echo number_format_i18n(($price_tax ? $offer['price_monthly_tax'] : $offer['price_monthly'])); ?></span> kr.
             </div>
           </div>
@@ -115,11 +115,11 @@ function fl_embed_leasing_car_preview($offer) {
         <div class="col-12 text-muted">
           <div class="row fl-offset-5">
             <div class="col-4 text-center no-padding">
-              <span class="fl-stat-label">Kilometer</span><br>
+              <span class="fl-stat-label">Km. </span><br>
               <span class="fl-stat-value"><?php echo number_format_i18n($offer['car']['mileage']); ?></span>
             </div>
             <div class="col-4 text-center no-padding">
-              <span class="fl-stat-label">Årgang</span><br>
+              <span class="fl-stat-label">Årg. </span><br>
               <span class="fl-stat-value"><?php echo $car['year']; ?></span>
             </div>
             <div class="col-4 text-center no-padding">

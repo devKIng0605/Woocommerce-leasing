@@ -127,22 +127,22 @@ $action_url = home_url($wp->request);
                                                 </div>
                                             <?php } ?>
                                             <div class="row">
-                                                <h5 class="col-6">Udbetaling</h5>
-                                                <div class="col-6 text-right fl-price"><?php echo number_format_i18n(($price_tax ? $listing['first_pay'] : $listing['first_pay'] * 0.8)); ?>
+                                                <h5 class="col-4">Udbetaling</h5>
+                                                <div class="col-8 text-right fl-price"><?php echo number_format_i18n(($price_tax ? $listing['first_pay'] : $listing['first_pay'] * 0.8)); ?>
                                                     kr.
                                                 </div>
                                             </div>
                                             <?php if ($listing['funding'] === 'Finansiel') { ?>
                                                 <div class="row">
-                                                    <h5 class="col-6">Restværdi</h5>
-                                                    <div class="col-6 text-right fl-price"><?php echo number_format_i18n((!$listing['remaining_value_tax'] ? ($listing['remaining_value'] * 0.8) : $listing['remaining_value'])); ?>
+                                                    <h5 class="col-4">Restværdi</h5>
+                                                    <div class="col-8 text-right fl-price"><?php echo number_format_i18n((!$listing['remaining_value_tax'] ? ($listing['remaining_value'] * 0.8) : $listing['remaining_value'])); ?>
                                                         kr. <?php echo(!$listing['remaining_value_tax'] ? 'ex. moms' : 'inkl. moms'); ?></div>
                                                 </div>
                                             <?php } ?>
                                             <div class="row">
                                                 <?php if (!empty($listing['price_monthly'])) { ?>
-                                                    <h5 class="col-6">Pr. mnd.</h5>
-                                                    <div class="col-6 text-right fl-price"><span
+                                                    <h5 class="col-4">Pr. mnd.</h5>
+                                                    <div class="col-8 text-right fl-price"><span
                                                             class="fl-price-monthly-value"><?php echo number_format_i18n(($price_tax ? $listing['price_monthly'] : $listing['price_monthly'] * 0.8)); ?></span>kr.</div>
                                                 <?php } else { ?>
                                                     <h5>Ring for pris</h5>

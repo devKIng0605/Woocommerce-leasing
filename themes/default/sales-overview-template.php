@@ -111,8 +111,8 @@ $action_url = home_url($wp->request);
                                         </div>
                                         <div class="col-12 leasing-info">
                                             <div class="row">
-                                                <h5 class="col-6">Pr. mnd.</h5>
-                                                <div class="col-6 text-right fl-price">
+                                                <h5 class="col-4">Pr. mnd.</h5>
+                                                <div class="col-8 text-right fl-price">
                                                     <span class="fl-price-monthly-value fl-detail-price-value"><?php echo number_format_i18n($offer['detail_price']); ?></span>
                                                     kr.
                                                 </div>
