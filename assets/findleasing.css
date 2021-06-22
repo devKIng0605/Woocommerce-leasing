@@ -323,13 +323,17 @@ a .leasing-info {
 .fl-listing-page .fl-bs {
     padding: 40px;
 }
+.fl-listing-page .fl-bs>.row {
+    justify-content: space-between;
+}
 .fl-listing-page .car-item {
+    min-width: 350px;
     max-width: calc( 33.333333% - 40px);
     padding: 0;
     margin-top: 40px;
     border: 1px solid #d3d3d3;
 }
-.fl-listing-page .car-item:nth-child(3n+1) {
+/* .fl-listing-page .car-item:nth-child(3n+1) {
     margin-right: 30px;
 }
 .fl-listing-page .car-item:nth-child(3n+2) {
@@ -338,7 +342,7 @@ a .leasing-info {
 }
 .fl-listing-page .car-item:nth-child(3n) {
     margin-left: 30px;
-}
+} */
 .fl-listing-page .car-item img {
     width: 100%;
 }
@@ -351,7 +355,7 @@ a .leasing-info {
 .fl-listing-page .car-item .car-title {
     display: flex;
     justify-content: space-between;
-    padding: 15px 30px 0 30px;
+    padding: 15px 15px 0 15px;
 }
 .fl-listing-page .car-item .car-title .fl-sub-title {
     width: auto;
@@ -509,5 +513,19 @@ a .leasing-info {
 @media (max-width: 440px) {
     .fl-detail-page.margin-20 .info-wrapper .info-content .display-flex {
         max-width: 100% !important;
+    }
+}
+@media (max-width: 1420px) {
+    .fl-listing-page .car-item .car-title .fl-title, .fl-listing-page .car-item .leasing-info h5 {
+        font-size: 1em;
+    }
+    .fl-listing-page .car-item .car-title .fl-sub-title, .fl-listing-page .car-item .leasing-info .col-4 {
+        font-size: 0.9em;
+    }
+    .fl-listing-page .car-item .leasing-info .fl-price {
+        font-size: 1.1em;
+    }
+    .fl-listing-page .car-item .text-muted .no-padding {
+        font-size: 0.8em;
     }
 }
